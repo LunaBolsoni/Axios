@@ -69,14 +69,14 @@ function openMovie(tvId) {
   <loading v-model:active="isLoading" is-full-page />
 
   <div class="tv-list">
-  <div v-for="tv in tvs" :key="tv.id" class="tv-card">
+  <div v-for="tv in programas" :key="tv.id" class="tv-card">
     <img
   :src="`https://image.tmdb.org/t/p/w500${tv.poster_path}`"
   :alt="tv.title"
   @click="openMovie(tv.id)"
 />
     <div class="tv-details">
-      <p class="tv-title">{{ programa.title }}</p>
+      <p class="tv-title">{{ programas.title }}</p>
       <p class="tv-release-date">{{ formatDate(tv.release_date) }}</p>
       <p class="tv-genres">
         <span

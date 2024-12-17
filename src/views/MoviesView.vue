@@ -14,14 +14,6 @@ const router = useRouter()
 
   const formatDate = (date) => new Date(date).toLocaleDateString('pt-BR');
 
-
-
-  onMounted(async () => {
-  isLoading.value = true;
-  await genreStore.getAllGenres('movie');
-  isLoading.value = false;
-});
-
   onMounted(async () => {
   isLoading.value = true;
   await genreStore.getAllGenres('movie');

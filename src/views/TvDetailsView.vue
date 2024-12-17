@@ -4,7 +4,7 @@ import { useTvStore } from '@/stores/tv';
 const TvStore = useTvStore();
 
 const props = defineProps({
-  movieId: {
+  tvId: {
     type: Number,
     required: true,
   },
@@ -21,7 +21,7 @@ onMounted(async () => {
   <div class="content">
     <img
       :src="`https://image.tmdb.org/t/p/w185${TvStore.currentTv.poster_path}`"
-      :alt="movieStore.currentMovie.title"
+      :alt="TvStore.currentTv.title"
     />
 
     <div class="details">

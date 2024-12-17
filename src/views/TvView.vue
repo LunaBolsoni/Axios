@@ -14,14 +14,6 @@ const router = useRouter()
 
   const formatDate = (date) => new Date(date).toLocaleDateString('pt-BR');
 
-
-
-  onMounted(async () => {
-  isLoading.value = true;
-  await genreStore.getAllGenres('tv');
-  isLoading.value = false;
-});
-
   onMounted(async () => {
   isLoading.value = true;
   await genreStore.getAllGenres('tv');
@@ -41,9 +33,11 @@ const router = useRouter()
   });
   programas.value = response.data.results;
   isLoading.value = false;
+
+  console.log(programas.value);
 };
 
-function openMovie(tvId) {
+function openTv(tvId) {
   router.push({ name: 'TvDetails', params: { tvId } });
 } 
 
@@ -73,10 +67,11 @@ function openMovie(tvId) {
     <img
   :src="`https://image.tmdb.org/t/p/w500${tv.poster_path}`"
   :alt="tv.title"
-  @click="openMovie(tv.id)"
-/>
+  @click="openTv(tv.id)"
+ />
+ {{ tv.id }}
     <div class="tv-details">
-      <p class="tv-title">{{ programas.title }}</p>
+      <p class="tv-tit le">{{ programas.title }}</p>
       <p class="tv-release-date">{{ formatDate(tv.release_date) }}</p>
       <p class="tv-genres">
         <span

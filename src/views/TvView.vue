@@ -71,7 +71,7 @@ function openTv(tvId) {
  />
  {{ tv.id }}
     <div class="tv-details">
-      <p class="tv-tit le">{{ tv.name }}</p>
+      <p class="tv-title">{{ tv.name }}</p>
       <p class="tv-release-date">{{ formatDate(tv.first_air_date) }}</p>
       <p class="tv-genres">
         <span
@@ -101,21 +101,28 @@ function openTv(tvId) {
 }
 
 .genre-item {
-  background-color: #387250;
-  border-radius: 1rem;
-  padding: 0.5rem 1rem;
-  color: #fff;
+  background-color: black; 
+  color: white; 
+  border: white 1px solid; 
+  border-radius: 20px; 
+  padding: 10px 20px; 
+  font-size: 14px;
+  cursor: pointer; 
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .genre-item:hover {
   cursor: pointer;
-  background-color: #4e9e5f;
-  box-shadow: 0 0 0.5rem #387250;
+  background-color: yellow;
+  color: black;
 }
+
 .tv-list {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .tv-card {
@@ -123,28 +130,31 @@ function openTv(tvId) {
   height: 30rem;
   border-radius: 0.5rem;
   overflow: hidden;
-  box-shadow: 0 0 0.5rem #000;
+  background-color: #000000;
+  border: rgb(51, 50, 50) 1px solid;
+  box-shadow: 0 0 0.5rem #2e2e2e;
+
 }
 
 .tv-card img {
   width: 100%;
   height: 20rem;
-  border-radius: 0.5rem;
   box-shadow: 0 0 0.5rem #000;
 }
 
-.tv-detai {
+.tv-details {
   padding: 0 0.5rem;
 }
 
-.movie-title {
+.tv-title {
   font-size: 1.1rem;
   font-weight: bold;
   line-height: 1.3rem;
   height: 3.2rem;
+  color: white;
 }
 
-.movie-genres {
+.tv-genres {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -153,8 +163,8 @@ function openTv(tvId) {
   gap: 0.2rem;
 }
 
-.movie-genres span {
-  background-color: #748708;
+.tv-genres span {
+  background-color: #000000;
   border-radius: 0.5rem;
   padding: 0.2rem 0.5rem;
   color: #fff;
@@ -162,20 +172,30 @@ function openTv(tvId) {
   font-weight: bold;
 }
 
-.movie-genres span:hover {
+.tv-genres span:hover {
   cursor: pointer;
-  background-color: #455a08;
-  box-shadow: 0 0 0.5rem #748708;
+  background-color: #fbff00;
+  box-shadow: 0 0 0.5rem #ffffff;
+  color: black;
 }
 
 .active {
-  background-color: #67b086;
+  background-color: yellow;
   font-weight: bolder;
+  color: black;
 }
 
-.movie-genres span.active {
-  background-color: #abc322;
+.tv-genres span.active {
+  background-color: yellow;
   color: #000;
   font-weight: bolder;
 }
+
+h1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: yellow;
+}
+
 </style>

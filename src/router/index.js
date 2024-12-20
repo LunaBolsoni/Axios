@@ -28,6 +28,12 @@ const routes = [
     component: () => import('../views/TvDetailsView.vue'),
     props: true,
   },
+  {
+    path: '/cadastro',
+    name: 'Cadastro',
+    component: () => import('../views/CadastroView.vue'),
+    props: true,
+  },
 ];
 
 const router = createRouter({

@@ -21,11 +21,11 @@ onMounted(async () => {
   <div class="content">
     <img
       :src="`https://image.tmdb.org/t/p/w185${TvStore.currentTv.poster_path}`"
-      :alt="TvStore.currentTv.title"
+      :alt="TvStore.currentTv.name"
     />
 
     <div class="details">
-      <h1>Filme: {{ TvStore.currentTv.title }}</h1>
+      <h1>Serie: {{ TvStore.currentTv.name }}</h1>
       <p>{{ TvStore.currentTv.tagline }}</p>
       <p>{{ TvStore.currentTv.overview }}</p>
       <p>Orçamento: ${{ TvStore.currentTv.budget }}</p>

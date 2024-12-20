@@ -2,7 +2,7 @@ import { reactive, computed } from 'vue';
 import { defineStore } from 'pinia';
 import api from '@/plugins/axios';
 
-export const useTvStore = defineStore('Tv', () => {
+export const useTvStore = defineStore('tv', () => {
   const state = reactive({
     currentTv: {},
   });
@@ -10,7 +10,7 @@ export const useTvStore = defineStore('Tv', () => {
   const currentTv = computed(() => state.currentTv);
 
   const getTvDetail = async (tvId) => {
-    const response = await api.get(`Tv/${tvId}`);
+    const response = await api.get(`tv/${tvId}`);
     state.currentTv = response.data;
   };
 

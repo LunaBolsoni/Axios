@@ -71,8 +71,8 @@ function openTv(tvId) {
  />
  {{ tv.id }}
     <div class="tv-details">
-      <p class="tv-tit le">{{ programas.title }}</p>
-      <p class="tv-release-date">{{ formatDate(tv.release_date) }}</p>
+      <p class="tv-tit le">{{ tv.name }}</p>
+      <p class="tv-release-date">{{ formatDate(tv.first_air_date) }}</p>
       <p class="tv-genres">
         <span
   v-for="genre_id in tv.genre_ids"
@@ -85,7 +85,6 @@ function openTv(tvId) {
 
       </p>
     </div>
-
   </div>
 </div>
 
